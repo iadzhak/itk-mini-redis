@@ -1,2 +1,2 @@
 def serve():
-    print('Hello')
+    print("Hello")
