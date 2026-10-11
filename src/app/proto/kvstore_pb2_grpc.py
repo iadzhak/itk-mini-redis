@@ -5,7 +5,7 @@ import grpc
 
 import app.proto.kvstore_pb2 as kvstore__pb2
 
-GRPC_GENERATED_VERSION = "1.84.0"
+GRPC_GENERATED_VERSION = '1.84.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -20,11 +20,11 @@ except ImportError:
 
 if _version_not_supported:
     raise RuntimeError(
-        f"The grpc package installed is at version {GRPC_VERSION},"
-        + " but the generated code in kvstore_pb2_grpc.py depends on"
-        + f" grpcio>={GRPC_GENERATED_VERSION}."
-        + f" Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}"
-        + f" or downgrade your generated code using grpcio-tools<={GRPC_VERSION}."
+        f'The grpc package installed is at version {GRPC_VERSION},'
+        + ' but the generated code in kvstore_pb2_grpc.py depends on'
+        + f' grpcio>={GRPC_GENERATED_VERSION}.'
+        + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
+        + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
@@ -40,25 +40,25 @@ class KeyValueStoreStub:
             channel: A grpc.Channel.
         """
         self.Put = channel.unary_unary(
-            "/kvstore.KeyValueStore/Put",
+            '/kvstore.KeyValueStore/Put',
             request_serializer=kvstore__pb2.PutRequest.SerializeToString,
             response_deserializer=kvstore__pb2.PutResponse.FromString,
             _registered_method=True,
         )
         self.Get = channel.unary_unary(
-            "/kvstore.KeyValueStore/Get",
+            '/kvstore.KeyValueStore/Get',
             request_serializer=kvstore__pb2.GetRequest.SerializeToString,
             response_deserializer=kvstore__pb2.GetResponse.FromString,
             _registered_method=True,
         )
         self.Delete = channel.unary_unary(
-            "/kvstore.KeyValueStore/Delete",
+            '/kvstore.KeyValueStore/Delete',
             request_serializer=kvstore__pb2.DeleteRequest.SerializeToString,
             response_deserializer=kvstore__pb2.DeleteResponse.FromString,
             _registered_method=True,
         )
         self.List = channel.unary_unary(
-            "/kvstore.KeyValueStore/List",
+            '/kvstore.KeyValueStore/List',
             request_serializer=kvstore__pb2.ListRequest.SerializeToString,
             response_deserializer=kvstore__pb2.ListResponse.FromString,
             _registered_method=True,
@@ -73,56 +73,56 @@ class KeyValueStoreServicer:
     def Put(self, request, context):
         """Put: добавить или обновить значение. ttl_seconds = 0 означает отсутствие TTL."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details("Method not implemented!")
-        raise NotImplementedError("Method not implemented!")
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
         """Get: получить значение по ключу. NOT_FOUND — если ключ отсутствует или TTL истёк."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details("Method not implemented!")
-        raise NotImplementedError("Method not implemented!")
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
         """Delete: удалить ключ."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details("Method not implemented!")
-        raise NotImplementedError("Method not implemented!")
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
         """List: вернуть все ключи и значения с данным prefix. Истёкшие по TTL не возвращать."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details("Method not implemented!")
-        raise NotImplementedError("Method not implemented!")
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
 
 def add_KeyValueStoreServicer_to_server(servicer, server):
     rpc_method_handlers = {
-        "Put": grpc.unary_unary_rpc_method_handler(
+        'Put': grpc.unary_unary_rpc_method_handler(
             servicer.Put,
             request_deserializer=kvstore__pb2.PutRequest.FromString,
             response_serializer=kvstore__pb2.PutResponse.SerializeToString,
         ),
-        "Get": grpc.unary_unary_rpc_method_handler(
+        'Get': grpc.unary_unary_rpc_method_handler(
             servicer.Get,
             request_deserializer=kvstore__pb2.GetRequest.FromString,
             response_serializer=kvstore__pb2.GetResponse.SerializeToString,
         ),
-        "Delete": grpc.unary_unary_rpc_method_handler(
+        'Delete': grpc.unary_unary_rpc_method_handler(
             servicer.Delete,
             request_deserializer=kvstore__pb2.DeleteRequest.FromString,
             response_serializer=kvstore__pb2.DeleteResponse.SerializeToString,
         ),
-        "List": grpc.unary_unary_rpc_method_handler(
+        'List': grpc.unary_unary_rpc_method_handler(
             servicer.List,
             request_deserializer=kvstore__pb2.ListRequest.FromString,
             response_serializer=kvstore__pb2.ListResponse.SerializeToString,
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-        "kvstore.KeyValueStore", rpc_method_handlers
+        'kvstore.KeyValueStore', rpc_method_handlers
     )
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers("kvstore.KeyValueStore", rpc_method_handlers)
+    server.add_registered_method_handlers('kvstore.KeyValueStore', rpc_method_handlers)
 
 
 # This class is part of an EXPERIMENTAL API.
@@ -147,7 +147,7 @@ class KeyValueStore:
         return grpc.experimental.unary_unary(
             request,
             target,
-            "/kvstore.KeyValueStore/Put",
+            '/kvstore.KeyValueStore/Put',
             kvstore__pb2.PutRequest.SerializeToString,
             kvstore__pb2.PutResponse.FromString,
             options,
@@ -177,7 +177,7 @@ class KeyValueStore:
         return grpc.experimental.unary_unary(
             request,
             target,
-            "/kvstore.KeyValueStore/Get",
+            '/kvstore.KeyValueStore/Get',
             kvstore__pb2.GetRequest.SerializeToString,
             kvstore__pb2.GetResponse.FromString,
             options,
@@ -207,7 +207,7 @@ class KeyValueStore:
         return grpc.experimental.unary_unary(
             request,
             target,
-            "/kvstore.KeyValueStore/Delete",
+            '/kvstore.KeyValueStore/Delete',
             kvstore__pb2.DeleteRequest.SerializeToString,
             kvstore__pb2.DeleteResponse.FromString,
             options,
@@ -237,7 +237,7 @@ class KeyValueStore:
         return grpc.experimental.unary_unary(
             request,
             target,
-            "/kvstore.KeyValueStore/List",
+            '/kvstore.KeyValueStore/List',
             kvstore__pb2.ListRequest.SerializeToString,
             kvstore__pb2.ListResponse.FromString,
             options,

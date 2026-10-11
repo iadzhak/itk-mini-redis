@@ -1,6 +1,6 @@
 __all__ = [
-    "BaseStorage",
-    "MemoryStorage",
+    'BaseStorage',
+    'MemoryStorage',
 ]
 
 from app.storage.base import BaseStorage

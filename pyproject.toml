@@ -30,3 +30,6 @@ dev = [
 
 [tool.pytest]
 addopts = ["-vv"]
+
+[tool.ruff.format]
+quote-style = "single"

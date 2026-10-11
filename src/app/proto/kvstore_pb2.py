@@ -11,7 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
 
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 7, 35, 1, "", "kvstore.proto"
+    _runtime_version.Domain.PUBLIC, 7, 35, 1, '', 'kvstore.proto'
 )
 # @@protoc_insertion_point(imports)
 
@@ -24,27 +24,27 @@ DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "kvstore_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'kvstore_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
     DESCRIPTOR._loaded_options = None
-    _globals["_PUTREQUEST"]._serialized_start = 26
-    _globals["_PUTREQUEST"]._serialized_end = 87
-    _globals["_PUTRESPONSE"]._serialized_start = 89
-    _globals["_PUTRESPONSE"]._serialized_end = 102
-    _globals["_GETREQUEST"]._serialized_start = 104
-    _globals["_GETREQUEST"]._serialized_end = 129
-    _globals["_GETRESPONSE"]._serialized_start = 131
-    _globals["_GETRESPONSE"]._serialized_end = 159
-    _globals["_DELETEREQUEST"]._serialized_start = 161
-    _globals["_DELETEREQUEST"]._serialized_end = 189
-    _globals["_DELETERESPONSE"]._serialized_start = 191
-    _globals["_DELETERESPONSE"]._serialized_end = 207
-    _globals["_LISTREQUEST"]._serialized_start = 209
-    _globals["_LISTREQUEST"]._serialized_end = 238
-    _globals["_KEYVALUE"]._serialized_start = 240
-    _globals["_KEYVALUE"]._serialized_end = 278
-    _globals["_LISTRESPONSE"]._serialized_start = 280
-    _globals["_LISTRESPONSE"]._serialized_end = 328
-    _globals["_KEYVALUESTORE"]._serialized_start = 331
-    _globals["_KEYVALUESTORE"]._serialized_end = 558
+    _globals['_PUTREQUEST']._serialized_start = 26
+    _globals['_PUTREQUEST']._serialized_end = 87
+    _globals['_PUTRESPONSE']._serialized_start = 89
+    _globals['_PUTRESPONSE']._serialized_end = 102
+    _globals['_GETREQUEST']._serialized_start = 104
+    _globals['_GETREQUEST']._serialized_end = 129
+    _globals['_GETRESPONSE']._serialized_start = 131
+    _globals['_GETRESPONSE']._serialized_end = 159
+    _globals['_DELETEREQUEST']._serialized_start = 161
+    _globals['_DELETEREQUEST']._serialized_end = 189
+    _globals['_DELETERESPONSE']._serialized_start = 191
+    _globals['_DELETERESPONSE']._serialized_end = 207
+    _globals['_LISTREQUEST']._serialized_start = 209
+    _globals['_LISTREQUEST']._serialized_end = 238
+    _globals['_KEYVALUE']._serialized_start = 240
+    _globals['_KEYVALUE']._serialized_end = 278
+    _globals['_LISTRESPONSE']._serialized_start = 280
+    _globals['_LISTRESPONSE']._serialized_end = 328
+    _globals['_KEYVALUESTORE']._serialized_start = 331
+    _globals['_KEYVALUESTORE']._serialized_end = 558
 # @@protoc_insertion_point(module_scope)
