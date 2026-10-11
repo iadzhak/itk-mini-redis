@@ -29,8 +29,8 @@ jobs:
       - name: Install dependencies
         run: uv sync --dev
 
-      - name: Run unit tests
-        run: uv run pytest -m unit
+      - name: Run tests
+        run: uv run pytest
 
   build:
     needs: tests
