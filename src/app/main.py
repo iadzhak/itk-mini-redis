@@ -1,4 +1,5 @@
 from concurrent import futures
+from threading import Lock
 
 import grpc
 from cachetools import LRUCache
@@ -13,7 +14,8 @@ logger = get_logger(__name__)
 
 def serve():
     logger.info('Инициализация...')
-    storage = MemoryStorage(LRUCache(settings.LRU_EVICTION))
+    lock = Lock()
+    storage = MemoryStorage(LRUCache(settings.LRU_EVICTION), lock)
     server = grpc.server(
         futures.ThreadPoolExecutor(max_workers=settings.MAX_WORKERS or None)
     )
@@ -27,6 +29,8 @@ def serve():
         server.wait_for_termination()
     except KeyboardInterrupt:
         pass
+    finally:
+        server.stop(grace=None)
     logger.info('Сервер остановлен')
 
 
