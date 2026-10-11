@@ -2,7 +2,7 @@ import logging
 
 from app.core.config import settings
 
-FMT = '%(asctime)s\t|\t%(name)s\t|\t%(levelname)s\t|\t %(message)s'
+FMT = '%(asctime)s\t| %(name)s\t| %(levelname)s\t|  %(message)s'
 DATEFMT = '%d-%m-%Y %H:%M:%S'
 
 
